@@ -1,0 +1,147 @@
+/* Сброс и базовая настройка */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #1f1f1f;
+}
+
+/* Анимация фона */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.3), rgba(0, 128, 255, 0.3), rgba(255, 0, 255, 0.3));
+  background-size: 400% 400%;
+  animation: backgroundAnimation 15s ease infinite;
+  z-index: 0;
+}
+
+/* Анимация для фона */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Контейнер для контента */
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px; /* Оставляем максимальную ширину */
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+/* Заголовок */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Уменьшаем шрифт */
+  color: #fff;
+}
+
+/* Инпуты и кнопки */
+input[type="file"],
+input[type="text"] {
+  background: #222;
+  border: 1px solid #444;
+  color: white;
+  padding: 12px; /* Уменьшаем поля */
+  width: 100%;
+  border-radius: 10px; /* Уменьшаем радиус скругления */
+  margin-bottom: 20px; /* Уменьшаем отступ */
+  font-size: 16px; /* Уменьшаем шрифт */
+}
+
+/* Кнопка */
+button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0ff, #09f);
+  background-size: 200%;
+  border: none;
+  color: white;
+  border-radius: 10px; /* Уменьшаем радиус скругления */
+  cursor: pointer;
+  transition: 0.4s ease;
+  font-size: 18px; /* Уменьшаем шрифт */
+  font-weight: bold;
+}
+
+button:hover {
+  background-position: right center;
+  box-shadow: 0 0 12px #0ff;
+  transform: scale(1.05);
+}
+
+/* Прогресс */
+progress {
+  width: 100%;
+  height: 16px; /* Уменьшаем высоту */
+  border-radius: 10px; /* Уменьшаем радиус скругления */
+  overflow: hidden;
+  margin-top: 20px;
+  background: #333;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #333;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(to right, #0ff, #0cf);
+}
+
+/* QR-код */
+#qrcode {
+  margin-top: 20px;
+}
+
+/* Кнопка выбора языка */
+.lang-selector {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+}
+
+.lang-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px; /* Уменьшаем размер кнопки */
+  border-radius: 10px; /* Уменьшаем радиус скругления */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px; /* Уменьшаем шрифт */
+}
+
+.lang-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px #0ff;
+  transform: scale(1.05);
+}
